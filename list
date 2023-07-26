@@ -1,0 +1,83 @@
+using ConsoleApp5;
+using System; 
+using System.Globalization;
+using System.Collections.Generic;
+
+namespace Course
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            List<string> list = new List<string>();
+
+            // Add = Inclui sempre no final
+            list.Add("Maria");
+            list.Add("Alex");
+            list.Add("Bob");
+            list.Add("Anna");
+            // Insert = Pode especificar a localização da inclusão
+            list.Insert(2, "Marco");
+
+            foreach (string nome in list) {
+                Console.WriteLine(nome);
+            }
+
+            Console.WriteLine("List count: " + list.Count);
+
+            string s1 = list.Find(x => x[0] == 'A');
+            Console.WriteLine("First 'A': " + s1);
+
+            string s2 = list.FindLast(x => x[0] == 'A');
+            Console.WriteLine("Last 'A': " + s2);
+
+            int pos1 = list.FindIndex(x => x[0] == 'A');
+            Console.WriteLine("First position 'A': " + pos1);
+
+            int pos2 = list.FindLastIndex(x => x[0] == 'A');
+            Console.WriteLine("Last position 'A': " + pos2);
+
+            List<string> list2 = list.FindAll(x => x.Length == 5);
+            Console.WriteLine("---------------------");
+            foreach (string nome in list2)
+            {
+                Console.WriteLine(nome);
+            }
+
+            list.Remove("Alex");
+            Console.WriteLine("---------------------");
+            foreach (string nome in list)
+            {
+                Console.WriteLine(nome);
+            }
+
+            list.RemoveAll(x => x[0] == 'M');
+            Console.WriteLine("---------------------");
+            foreach (string nome in list)
+            {
+                Console.WriteLine(nome);
+            }
+
+            list.RemoveAt(1);
+            Console.WriteLine("---------------------");
+            foreach (string nome in list)
+            {
+                Console.WriteLine(nome);
+            }
+
+            // A partir da posição 0, remover 1 elemento
+            list.RemoveRange(0, 1);
+            Console.WriteLine("---------------------");
+            foreach (string nome in list)
+            {
+                Console.WriteLine(nome);
+            }
+
+        }
+
+
+        }
+
+
+    }
