@@ -1,0 +1,43 @@
+using ConsoleApp5;
+using System; 
+using System.Globalization;
+
+namespace Course
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int s1 = Calculator.Sum( 2, 3 );
+            int s2 = Calculator.Sum( 2, 3, 4 );
+
+            Console.WriteLine(s1);
+            Console.WriteLine(s2);
+
+        }
+
+
+    }
+
+}
+
+// arquivo class
+
+namespace ConsoleApp5
+{
+    class Calculator
+    {
+        public static int Sum(params int[] numbers)
+        {
+            int sum = 0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                sum += numbers[i];
+            }
+            return sum;
+        }
+
+    }
+}
+
