@@ -41,3 +41,48 @@ namespace ConsoleApp5
     }
 }
 
+
+
+// Outro modelo 
+
+using ConsoleApp5;
+using System; 
+using System.Globalization;
+
+namespace Course
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            double a = double.Parse(Console.ReadLine());
+            double triple;
+            Calculator.Triple(a, out triple);
+            Console.WriteLine(triple);
+
+
+        }
+
+
+    }
+
+}
+
+-- arquivo class
+
+namespace ConsoleApp5
+{
+    class Calculator
+    {
+        public static void Triple(double origin , out double result) 
+        {
+
+            result = origin * 3;
+            
+        }
+
+    }
+}
+
